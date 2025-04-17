@@ -1,4 +1,5 @@
 import { buttonVariants } from "@/components/ui/button";
+import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
@@ -7,7 +8,10 @@ export default function IndexPage() {
     <>
       <section className='mt-6 md:pt-10 lg:py-32 pb-8 md:pb-12'>
         <div className='p-4 text-center flex flex-col items-center gap-4 max-w-[64rem]'>
-          <Link href='/' className='bg-muted px-4 py-1.5 rounded-2xl font-medium text-sm'>
+          <Link
+            href={siteConfig.links.x}
+            className='bg-muted px-4 py-1.5 rounded-2xl font-medium text-sm'
+          >
             Xをフォローする
           </Link>
           <h1 className='font-extrabold text-3xl sm:text-5xl md:text-6xl'>Post Writer</h1>
@@ -20,7 +24,7 @@ export default function IndexPage() {
               はじめる
             </Link>
             <Link
-              href='/'
+              href={siteConfig.links.github}
               className={cn(buttonVariants({ size: "lg", variant: "outline" }))}
               target='_blank'
               rel='noreferrer'
