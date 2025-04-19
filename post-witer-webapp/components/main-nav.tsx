@@ -11,7 +11,7 @@ interface MainNavProps {
 }
 
 export default function MainNav({ items }: MainNavProps) {
-  const [showMobileMenu, setShowMobileMenu] = useState<boolean>(true);
+  const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
 
   return (
     <div className='flex items-center md:gap-10'>
@@ -32,7 +32,7 @@ export default function MainNav({ items }: MainNavProps) {
       <button className='md:hidden' onClick={() => setShowMobileMenu(!showMobileMenu)}>
         <span>メニュー</span>
       </button>
-      {showMobileMenu && <MobileNav />}
+      {showMobileMenu && <MobileNav items={items} />}
     </div>
   );
 }
